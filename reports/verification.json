@@ -1,0 +1,22 @@
+{
+  "tests": 28,
+  "replay_scenarios": 6,
+  "model_runs": 2,
+  "http_demo": {
+    "decision": "release_ready",
+    "state": "exported",
+    "mode": "replay",
+    "files": [
+      "release-manifest.json"
+    ],
+    "hec": {
+      "accepted": 3,
+      "attempted": 3,
+      "pending": 0
+    }
+  },
+  "promtool_rules": "passed",
+  "config_parse": "passed",
+  "live_prometheus_scrape": "passed",
+  "source_sha256": "5d9a36e15f1a457eb7efc0aa05b8be54e4975fa12f7433f817fdb6dcfeda3647"
+}

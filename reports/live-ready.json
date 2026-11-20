@@ -1,0 +1,104 @@
+{
+  "artifact_sha256": "48dfcf9007f3a7ad9df40044ae1b10f4a457b3aca1defc1683740d92eb4e08c9",
+  "blockers": [],
+  "citations": [
+    "pipeline",
+    "artifact",
+    "quality"
+  ],
+  "decision": "release_ready",
+  "evidence": {
+    "artifact": {
+      "data": {
+        "content_base64": "c3ludGhldGljIGFwcGxpY2F0aW9uIGFydGlmYWN0IHYx",
+        "sha256": "48dfcf9007f3a7ad9df40044ae1b10f4a457b3aca1defc1683740d92eb4e08c9"
+      },
+      "id": "artifact",
+      "sha256": "8078743c22baf6328a5ee0bdae1966bff7bdfe1ebb2ebee607b6dba52734b28f"
+    },
+    "pipeline": {
+      "data": [
+        {
+          "id": "tests",
+          "kind": "test",
+          "needs": [],
+          "result": "pass"
+        },
+        {
+          "id": "scan",
+          "kind": "scan",
+          "needs": [],
+          "result": "pass"
+        },
+        {
+          "id": "build",
+          "kind": "build",
+          "needs": [
+            "tests",
+            "scan"
+          ],
+          "result": "pass"
+        },
+        {
+          "id": "canary",
+          "kind": "canary",
+          "needs": [
+            "build"
+          ],
+          "result": "pass"
+        },
+        {
+          "id": "deploy",
+          "kind": "deploy",
+          "needs": [
+            "canary"
+          ],
+          "result": "pending"
+        }
+      ],
+      "id": "pipeline",
+      "sha256": "ada50067b29471059c96ec7c715aeba9b097954dac48a835cf87a2dc4fb3a76c"
+    },
+    "quality": {
+      "data": {
+        "artifact_sha256": "48dfcf9007f3a7ad9df40044ae1b10f4a457b3aca1defc1683740d92eb4e08c9",
+        "baseline_errors": 10,
+        "baseline_p95_ms": 100,
+        "baseline_requests": 10000,
+        "candidate_errors": 10,
+        "candidate_p95_ms": 110,
+        "candidate_requests": 10000,
+        "critical_findings": 0,
+        "failures": 0,
+        "max_error_increase_ppm": 1000,
+        "max_latency_ratio_percent": 120,
+        "tests": 12
+      },
+      "id": "quality",
+      "sha256": "4218d4c5a413c9254317427f1f2f40c05f4ff20fa22d3733ae6263ceeb59ee4f"
+    }
+  },
+  "missing": [],
+  "model": "qwen2.5:0.5b",
+  "planner": "ollama",
+  "ready": true,
+  "reason": "Artifact, DAG and quality gates passed.",
+  "stop": "evidence_complete",
+  "trace": [
+    {
+      "event": "observed",
+      "source": "pipeline",
+      "step": 1
+    },
+    {
+      "event": "observed",
+      "source": "quality",
+      "step": 2
+    },
+    {
+      "event": "observed",
+      "source": "artifact",
+      "step": 3
+    }
+  ]
+}

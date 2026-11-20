@@ -1,0 +1,57 @@
+{
+  "pipeline": [
+    {
+      "id": "tests",
+      "kind": "test",
+      "needs": [],
+      "result": "pass"
+    },
+    {
+      "id": "scan",
+      "kind": "scan",
+      "needs": [],
+      "result": "pass"
+    },
+    {
+      "id": "build",
+      "kind": "build",
+      "needs": [
+        "tests",
+        "scan"
+      ],
+      "result": "pass"
+    },
+    {
+      "id": "canary",
+      "kind": "canary",
+      "needs": [
+        "build"
+      ],
+      "result": "pass"
+    },
+    {
+      "id": "deploy",
+      "kind": "deploy",
+      "needs": [
+        "canary"
+      ],
+      "result": "pending"
+    }
+  ],
+  "artifact": {
+    "content_base64": "c3ludGhldGljIGFwcGxpY2F0aW9uIGFydGlmYWN0IHYx",
+    "sha256": "48dfcf9007f3a7ad9df40044ae1b10f4a457b3aca1defc1683740d92eb4e08c9"
+  },
+  "quality": {
+    "tests": 12,
+    "failures": 0,
+    "critical_findings": 0,
+    "candidate_requests": 10000,
+    "candidate_errors": 10,
+    "baseline_requests": 10000,
+    "baseline_errors": 10,
+    "candidate_p95_ms": 121,
+    "baseline_p95_ms": 100,
+    "artifact_sha256": "48dfcf9007f3a7ad9df40044ae1b10f4a457b3aca1defc1683740d92eb4e08c9"
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "healthy",
+    "expected": "release_ready",
+    "decision": "release_ready",
+    "passed": true
+  },
+  {
+    "name": "artifact-tamper",
+    "expected": "release_hold",
+    "decision": "release_hold",
+    "passed": true
+  },
+  {
+    "name": "test-bypass",
+    "expected": "release_hold",
+    "decision": "release_hold",
+    "passed": true
+  },
+  {
+    "name": "critical-finding",
+    "expected": "release_hold",
+    "decision": "release_hold",
+    "passed": true
+  },
+  {
+    "name": "canary-errors",
+    "expected": "release_hold",
+    "decision": "release_hold",
+    "passed": true
+  },
+  {
+    "name": "canary-latency",
+    "expected": "release_hold",
+    "decision": "release_hold",
+    "passed": true
+  }
+]

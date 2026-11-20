@@ -1,0 +1,32 @@
+[
+  {
+    "name": "healthy",
+    "input": "healthy.json",
+    "expected": "release_ready"
+  },
+  {
+    "name": "artifact-tamper",
+    "input": "artifact-tamper.json",
+    "expected": "release_hold"
+  },
+  {
+    "name": "test-bypass",
+    "input": "test-bypass.json",
+    "expected": "release_hold"
+  },
+  {
+    "name": "critical-finding",
+    "input": "critical-finding.json",
+    "expected": "release_hold"
+  },
+  {
+    "name": "canary-errors",
+    "input": "canary-errors.json",
+    "expected": "release_hold"
+  },
+  {
+    "name": "canary-latency",
+    "input": "canary-latency.json",
+    "expected": "release_hold"
+  }
+]
